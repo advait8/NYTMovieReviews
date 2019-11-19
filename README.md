@@ -10,3 +10,4 @@ To build this app:
   3) Android Lifecycle components : a) LiveData
                                     b) Data Binding
   4) Robolectric for unit testing.
+  **Robolectric test is failing due to compatibility issue between robolectric version and Android studio. Need to debug further to get the tests running**
