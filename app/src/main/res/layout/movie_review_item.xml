@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="movieReview"
+            type="com.advait.opentableproject.nytmoviereviews.service.model.MovieReview" />
+        <variable
+            name="imageUrl"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/cardview_default_elevation">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:id="@+id/moviePreviewImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:contentDescription="@string/image"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.056"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:profileImage="@{imageUrl}" />
+
+                <TextView
+                    android:id="@+id/movieName"
+                    android:layout_width="227dp"
+                    android:layout_height="57dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@{movieReview.displayTitle}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.6"
+                    app:layout_constraintStart_toEndOf="@+id/moviePreviewImage"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/mpaaRating"
+                    android:layout_width="89dp"
+                    android:layout_height="31dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@{movieReview.mpaaRating}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.134"
+                    app:layout_constraintStart_toEndOf="@+id/moviePreviewImage"
+                    app:layout_constraintTop_toBottomOf="@+id/movieName" />
+
+                <TextView
+                    android:id="@+id/byline"
+                    android:layout_width="94dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@{movieReview.byline}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.614"
+                    app:layout_constraintStart_toEndOf="@+id/mpaaRating"
+                    app:layout_constraintTop_toBottomOf="@+id/movieName" />
+
+                <TextView
+                    android:id="@+id/headline"
+                    android:layout_width="366dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="24dp"
+                    android:text="@{movieReview.headline}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.355"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/moviePreviewImage" />
+
+                <TextView
+                    android:id="@+id/shortSummary"
+                    android:layout_width="366dp"
+                    android:layout_height="37dp"
+                    android:layout_marginTop="12dp"
+                    android:text="@{movieReview.summaryShort}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.344"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/headline" />
+
+                <TextView
+                    android:id="@+id/publicationDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="@{movieReview.publicationDate}"
+                    app:layout_constraintBottom_toTopOf="@+id/headline"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.471"
+                    app:layout_constraintStart_toEndOf="@+id/moviePreviewImage"
+                    app:layout_constraintTop_toBottomOf="@+id/mpaaRating"
+                    app:layout_constraintVertical_bias="1.0" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</layout>
