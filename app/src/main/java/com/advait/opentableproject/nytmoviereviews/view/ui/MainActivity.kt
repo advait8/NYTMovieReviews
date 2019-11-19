@@ -30,14 +30,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun observeViewModel(movieReviewViewModel: MovieReviewViewModel) {
-        movieReviewViewModel.fetchMovieReviews().observe(this, Observer {
-            binding.progressBar.visibility = View.GONE
-            if (it.movieReviewList.isNotEmpty()) {
+        movieReviewViewModel.getMovieReviewList().observe(this, Observer {
+            it.movieReviewList.let {
+                binding.progressBar.visibility = View.GONE
                 adapter = MovieReviewAdapter()
                 adapter.movieReviewViewModel = movieReviewViewModel
-                setupRecyclerView()
-            }
-
+                setupRecyclerView() }
         })
     }
 

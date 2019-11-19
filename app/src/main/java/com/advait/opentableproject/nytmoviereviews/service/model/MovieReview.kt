@@ -35,5 +35,6 @@ class MovieReview(
 )
 
 data class MovieReviewList(
+    @SerializedName(value = "results")
     val movieReviewList: ArrayList<MovieReview>
 )
