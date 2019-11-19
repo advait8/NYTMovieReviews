@@ -1,7 +1,6 @@
 package com.advait.opentableproject.nytmoviereviews.service.repository
 
 import android.util.Log
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.advait.opentableproject.nytmoviereviews.BuildConfig
 import com.advait.opentableproject.nytmoviereviews.service.model.MovieReviewList
