@@ -15,90 +15,89 @@
         android:layout_height="match_parent">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="396dp"
+            android:layout_width="390dp"
+            android:layout_height="310dp"
             android:elevation="@dimen/cardview_default_elevation">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="394dp"
-                android:layout_height="377dp"
+                android:layout_width="370dp"
+                android:layout_height="292dp"
                 android:layout_margin="8dp">
 
                 <ImageView
                     android:id="@+id/moviePreviewImage"
-                    android:layout_width="133dp"
-                    android:layout_height="104dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_width="117dp"
+                    android:layout_height="89dp"
+                    android:layout_marginTop="8dp"
                     android:contentDescription="@string/image"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/publicationDate"
+                    app:layout_constraintHorizontal_bias="0.135"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/movieName"
-                    android:layout_width="109dp"
-                    android:layout_height="41dp"
-                    android:layout_marginBottom="4dp"
+                    android:layout_width="248dp"
+                    android:layout_height="27dp"
+                    android:layout_marginBottom="8dp"
                     android:text="@{movieReview.displayTitle}"
                     app:layout_constraintBottom_toTopOf="@+id/byline"
                     app:layout_constraintEnd_toStartOf="@+id/mpaaRating"
-                    app:layout_constraintHorizontal_bias="0.11"
+                    app:layout_constraintHorizontal_bias="0.15"
                     app:layout_constraintStart_toStartOf="parent" />
 
                 <TextView
                     android:id="@+id/mpaaRating"
-                    android:layout_width="67dp"
-                    android:layout_height="37dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="20dp"
+                    android:layout_width="41dp"
+                    android:layout_height="28dp"
+                    android:layout_marginTop="76dp"
+                    android:layout_marginEnd="28dp"
                     android:text="@{movieReview.mpaaRating}"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toEndOf="@+id/moviePreviewImage"
-                    app:layout_constraintTop_toBottomOf="@+id/moviePreviewImage" />
+                    app:layout_constraintTop_toBottomOf="@+id/publicationDate" />
 
                 <TextView
                     android:id="@+id/byline"
-                    android:layout_width="357dp"
-                    android:layout_height="47dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_width="109dp"
+                    android:layout_height="19dp"
+                    android:layout_marginBottom="8dp"
                     android:text="@{movieReview.byline}"
+                    app:layout_constraintBottom_toTopOf="@+id/headline"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/mpaaRating" />
+                    app:layout_constraintHorizontal_bias="0.03"
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <TextView
                     android:id="@+id/headline"
-                    android:layout_width="366dp"
-                    android:layout_height="42dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_width="345dp"
+                    android:layout_height="44dp"
+                    android:layout_marginBottom="20dp"
                     android:text="@{movieReview.headline}"
+                    app:layout_constraintBottom_toTopOf="@+id/shortSummary"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.655"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/byline" />
+                    app:layout_constraintHorizontal_bias="0.32"
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <TextView
                     android:id="@+id/shortSummary"
-                    android:layout_width="366dp"
-                    android:layout_height="37dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_width="345dp"
+                    android:layout_height="36dp"
+                    android:layout_marginBottom="16dp"
                     android:text="@{movieReview.summaryShort}"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.655"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/headline" />
+                    app:layout_constraintHorizontal_bias="0.32"
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <TextView
                     android:id="@+id/publicationDate"
                     android:layout_width="143dp"
                     android:layout_height="27dp"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="28dp"
                     android:text="@{movieReview.publicationDate}"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.075"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
